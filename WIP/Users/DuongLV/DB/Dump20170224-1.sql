@@ -16,6 +16,44 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Dumping data for table `billoflading`
+--
+
+LOCK TABLES `billoflading` WRITE;
+/*!40000 ALTER TABLE `billoflading` DISABLE KEYS */;
+INSERT INTO `billoflading` VALUES (1,'',2,3,'',5,125,5,5,5,5,'mo ta','\0','','Hà Giang','Bắc Quang','a','a','2017-02-25 00:00:00','Hà Giang','Xín Mần','b','g','2017-02-28 00:00:00',1000,100,'2017-02-27 00:00:00',1,2,'2017-02-24 20:57:45'),(2,'',5,4,'',50,125,5,5,5,5,'mo ta','\0','','Hà Nội','Hoàng Mai','Địa chỉ nơi đi','Đặc điểm nơi đi','2017-02-25 00:00:00','receiverPhoneNumber','Lai Châu','Địa chỉ nơi đến','Đặc điểm nơi đến','2017-02-28 00:00:00',100,100,'2017-02-26 00:00:00',1,2,'2017-02-24 21:54:24');
+/*!40000 ALTER TABLE `billoflading` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `carmaker`
+--
+
+LOCK TABLES `carmaker` WRITE;
+/*!40000 ALTER TABLE `carmaker` DISABLE KEYS */;
+/*!40000 ALTER TABLE `carmaker` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `carrierauction`
+--
+
+LOCK TABLES `carrierauction` WRITE;
+/*!40000 ALTER TABLE `carrierauction` DISABLE KEYS */;
+INSERT INTO `carrierauction` VALUES (1,1,3,'2017-02-24 22:05:32',NULL,11,0,NULL);
+/*!40000 ALTER TABLE `carrierauction` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `cartype`
+--
+
+LOCK TABLES `cartype` WRITE;
+/*!40000 ALTER TABLE `cartype` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cartype` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping data for table `district`
 --
 
@@ -33,6 +71,34 @@ LOCK TABLES `goodstype` WRITE;
 /*!40000 ALTER TABLE `goodstype` DISABLE KEYS */;
 INSERT INTO `goodstype` VALUES (1,'MH001','Bàn-ghế-giường-tủ',NULL),(2,'MH002','Đồ uống',NULL),(3,'MH003','Động vật',NULL),(4,'MH004','Hàng điện tử',NULL),(5,'MH005','Hóa chất',NULL),(6,'MH006','Hoa quả',NULL),(7,'MH007','Kim loại - nguyên liệu',NULL),(8,'MH008','Máy móc - cơ khí',NULL),(9,'MH009','Sức khỏe - làm đẹp',NULL),(10,'MH010','Thể thao',NULL),(11,'MH011','Thực phẩm khô',NULL),(12,'MH012','Thực phẩm tươi',NULL),(13,'MH013','Văn phòng phẩm',NULL),(14,'MH014','Vật liệu xây dựng',NULL);
 /*!40000 ALTER TABLE `goodstype` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `language`
+--
+
+LOCK TABLES `language` WRITE;
+/*!40000 ALTER TABLE `language` DISABLE KEYS */;
+/*!40000 ALTER TABLE `language` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `languagename`
+--
+
+LOCK TABLES `languagename` WRITE;
+/*!40000 ALTER TABLE `languagename` DISABLE KEYS */;
+/*!40000 ALTER TABLE `languagename` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `operationfee`
+--
+
+LOCK TABLES `operationfee` WRITE;
+/*!40000 ALTER TABLE `operationfee` DISABLE KEYS */;
+INSERT INTO `operationfee` VALUES (1,'Đăng hàng cần chuyển',5000.00,'Phí đăng hàng đấu giá');
+/*!40000 ALTER TABLE `operationfee` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -56,13 +122,12 @@ INSERT INTO `province` VALUES (1,'01','Hà Nội','Thành Phố'),(2,'02','Hà G
 UNLOCK TABLES;
 
 --
--- Dumping data for table `transactions`
+-- Dumping data for table `report`
 --
 
-LOCK TABLES `transactions` WRITE;
-/*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
-INSERT INTO `transactions` VALUES (1,'MH01',1,1,NULL,10,10,10,10,10,10,'Màn hình máy tính','\0','\0','Hà Nội','Từ Liêm','Số 1 Phạm Hùng','Gần bến xe Mỹ Đình','2017-02-19 00:00:00','Thanh Hóa','Nông Cống','Thôn Trầu - Công Liêm','Gần UBND','2017-02-24 00:00:00',200,1000000,'2017-02-18 00:00:00',1,3,'2017-01-01 00:00:00');
-/*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
+LOCK TABLES `report` WRITE;
+/*!40000 ALTER TABLE `report` DISABLE KEYS */;
+/*!40000 ALTER TABLE `report` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -71,6 +136,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'U001','Le Van Duong','duonglvse03290@fpt.edu.vn','73220B4B59106FB02490A1F1FB888EC4','01669775349','Thôn Trầu - Công Liêm','Thanh Hóa','Nông Cống','123456789','Thanh Hóa','2010-08-04',1,'','2017-01-01 00:00:00'),(2,'U002','Demo GoodsOwner','goods_owner_demo@gmail.com','73220B4B59106FB02490A1F1FB888EC4','123456789','Thôn Trầu - Công Liêm','Thanh Hóa','Nông Cống','123456789','Thanh Hóa','2010-08-04',2,'','2017-01-01 00:00:00'),(3,'U003','Demo Carrier','carrier_demo@gmail.com','73220B4B59106FB02490A1F1FB888EC4','123456789','Thôn Trầu - Công Liêm','	Thanh Hóa','Nông Cống','123456789','Thanh Hóa','2010-08-04',3,'','2017-01-01 00:00:00'),(4,'U004','Demo GoodsOwner 2','goods_owner_demo2@gmail.com','73220B4B59106FB02490A1F1FB888EC4','123456789','Thôn Trầu - Công Liêm','	Thanh Hóa','Nông Cống','123456789','Thanh Hóa','2010-08-04',2,'','2017-01-01 00:00:00'),(5,'U005','Demo Carrier 2','carrier_demo2@gmail.com','73220B4B59106FB02490A1F1FB888EC4','123456789','Thôn Trầu - Công Liêm','	Thanh Hóa','Nông Cống','123456789','Thanh Hóa','2010-08-04',3,'','2017-01-01 00:00:00');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -83,4 +149,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-02-16 16:38:24
+-- Dump completed on 2017-02-24 22:08:31
