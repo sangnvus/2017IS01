@@ -5,40 +5,16 @@
 -- Server version	5.7.17-log
 
 --
--- Dumping data for table `answercomment`
---
-
-
---
--- Dumping data for table `billoflading`
---
-
--- Dumping data for table `carrierauction`
---
-
-
---
--- Dumping data for table `comment`
---
-
--- Dumping data for table `companyinformation`
---
-
-
---
--- Dumping data for table `district`
---
-
-
---
 -- Dumping data for table `goodstype`
 --
 
+
 LOCK TABLES `goodstype` WRITE;
 /*!40000 ALTER TABLE `goodstype` DISABLE KEYS */;
-INSERT INTO `goodstype` VALUES (1,'MH001','Bàn-ghế-giường-tủ',NULL),(2,'MH002','Đồ uống',NULL),(3,'MH003','Động vật',NULL),(4,'MH004','Hàng điện tử',NULL),(5,'MH005','Hóa chất',NULL),(6,'MH006','Hoa quả',NULL),(7,'MH007','Kim loại - nguyên liệu',NULL),(8,'MH008','Máy móc - cơ khí',NULL),(9,'MH009','Sức khỏe - làm đẹp',NULL),(10,'MH010','Thể thao',NULL),(11,'MH011','Thực phẩm khô',NULL),(12,'MH012','Thực phẩm tươi',NULL),(13,'MH013','Văn phòng phẩm',NULL),(14,'MH014','Vật liệu xây dựng',NULL);
+INSERT INTO `goodstype` VALUES (1,'MH001','Bàn-ghế-giường-tủ',NULL,11000),(2,'MH002','Đồ uống',NULL,10000),(3,'MH003','Động vật',NULL,10000),(4,'MH004','Hàng điện tử',NULL,10000),(5,'MH005','Hóa chất',NULL,10000),(6,'MH006','Hoa quả',NULL,10000),(7,'MH007','Kim loại - nguyên liệu',NULL,10000),(8,'MH008','Máy móc - cơ khí',NULL,10000),(9,'MH009','Sức khỏe - làm đẹp',NULL,10000),(10,'MH010','Thể thao',NULL,10000),(11,'MH011','Thực phẩm khô',NULL,10000),(12,'MH012','Thực phẩm tươi',NULL,10000),(13,'MH013','Văn phòng phẩm',NULL,10000),(14,'MH014','Vật liệu xây dựng',NULL,10000);
 /*!40000 ALTER TABLE `goodstype` ENABLE KEYS */;
 UNLOCK TABLES;
+
 
 --
 -- Dumping data for table `operationfee`
@@ -59,11 +35,6 @@ LOCK TABLES `packagedform` WRITE;
 INSERT INTO `packagedform` VALUES (1,'F001','Bao bì',NULL),(2,'F002','Bưu kiện',NULL),(3,'F003','Bưu phẩm',NULL),(4,'F004','Chai - lọ - thùng chứa',NULL),(5,'F005','Container',NULL),(6,'F006','Thùng cát tông',NULL),(7,'F007','Thùng gỗ',NULL),(8,'F008','Cuộn',NULL),(9,'F009','Bó',NULL);
 /*!40000 ALTER TABLE `packagedform` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping data for table `paymentdetail`
---
-
 
 --
 -- Dumping data for table `province`
@@ -87,6 +58,3 @@ UNLOCK TABLES;
 --
 -- Dumping data for table `usersaccount`
 --
-
-
--- Dump completed on 2017-03-21 12:37:56
