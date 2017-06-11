@@ -1,0 +1,47 @@
+package vn.co.cex.dao.impl;
+
+import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.hibernate.Query;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import vn.co.cex.dao.UsersDAO;
+import vn.co.cex.orm.Users;
+
+public class UsersDAOImpl extends BaseDAOImpl implements UsersDAO {
+
+	private static final Logger log = LogManager.getLogger(UsersDAOImpl.class);
+	/**
+	 * Get user list
+	 */
+	public List<Users> getAllUsers() {
+		List<Users> result = null;
+		try{
+			Session session = getSessionFactory().getCurrentSession();
+			Query query = session.createQuery(" from Users");
+			result = query.list();
+		}
+		catch (Exception e) {
+			log.debug(e);
+		}
+		return null;
+	}
+
+	/**
+	 * Get user by id
+	 */
+	public Users getUser(int id) {
+		Users result = null;
+		try{
+			Session session = getSessionFactory().getCurrentSession();
+			SQLQuery query = session.createSQLQuery("select * from Users where id = ?");
+			query.setParameter(0, id);
+			result = (Users)query.uniqueResult();
+		}
+		catch (Exception e) {
+			log.debug(e);
+		}
+		return result;
+	}
+}

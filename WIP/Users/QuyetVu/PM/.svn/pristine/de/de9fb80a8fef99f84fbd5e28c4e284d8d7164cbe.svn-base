@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 28, 2015 9:41:06 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="vn.co.cex.orm.LanguageName" table="languageName" >
+         <composite-id name="id" class="vn.co.cex.orm.LanguageNameID" >
+            <key-property name="code" type="string">
+                <column name="Code" length="4" />
+            </key-property>
+            <key-property name="languageCode" type="string">
+                <column name="LanguageCode" length="4" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="language" class="vn.co.cex.orm.Language" insert="false" update="false" fetch="select">
+            <column name="Code" not-null="true" />
+        </many-to-one>
+        <property name="languageCode" type="string" insert="false" update="false">
+            <column name="LanguageCode" length="4" not-null="true" />
+        </property>        
+        <property name="code" type="string" insert="false" update="false">
+            <column name="Code" length="4" />
+        </property>
+        <property name="name" type="string">
+            <column name="LanguageName" length="20" not-null="true" />
+        </property>        
+        <property name="createdBy" type="string">
+            <column name="CreatedBy" length="50" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CreatedDate" length="0" not-null="true" default="current_timestamp" />
+        </property>
+        <property name="lastModifiedBy" type="string">
+            <column name="LastModifiedBy" length="50" not-null="true"  />
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="LastModifiedDate" length="0" not-null="true" default="current_timestamp"  />
+        </property>
+    </class>
+</hibernate-mapping>

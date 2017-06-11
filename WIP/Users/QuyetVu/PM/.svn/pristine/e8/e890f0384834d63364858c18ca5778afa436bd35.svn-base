@@ -1,0 +1,42 @@
+window.onscroll = function() {scrollMenu()};
+
+/**
+ * Header run follow scroll
+ * @returns
+ */
+function scrollMenu() {
+    if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+        document.getElementById("main_header").className = "scroll";
+        document.getElementById("header_form:header_menu").classList.add("fix");
+    } else {
+        document.getElementById("main_header").className = "";
+        document.getElementById("header_form:header_menu").classList.remove("fix");
+    }
+}
+
+/**
+ * 
+ * @param value
+ * @returns
+ */
+function formatTime(value) {
+	var result = "";
+	if(value < 0){
+		result = "Hết giờ";
+	}
+	else if (value > 86400) {
+		var days = Math.ceil(value / 86400);
+		result = days + " ngày";
+	} else {
+		var seconds = parseInt(value % 60);
+		var minutes = parseInt((value / 60) % 60);
+		var hours = parseInt(value / (60 * 60));
+		
+		hours = hours < 10 ? "0" + hours : hours;
+		minutes = minutes < 10 ? "0" + minutes : minutes;
+		seconds = seconds < 10 ? "0" + seconds : seconds;
+		
+		result = hours + ":" + minutes + ":" + seconds;
+	}
+	return result;
+}

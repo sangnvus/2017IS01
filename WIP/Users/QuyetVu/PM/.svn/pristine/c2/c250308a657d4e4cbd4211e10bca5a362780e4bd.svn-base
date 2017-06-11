@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<body>
+	<ui:composition>
+		<h:form id="common_form">
+			<h1>#{msg['header.name']}</h1>
+			<div class="row">
+				<table id="table_search">
+					<tbody>
+						<tr>
+							<td>#{msg['transactions.goodsType']}</td>
+							<td><h:selectOneMenu id="goodsTypeId"
+									value="#{commonBean.goodsTypeId}">
+									<f:selectItem itemValue="0" itemLabel="--select--" />
+									<f:selectItems value="#{goodsTypeBean.goodsTypeList}"
+										var="goodsTypeValue" itemLabel="#{goodsTypeValue.name}"
+										itemValue="#{goodsTypeValue.id}" />
+								</h:selectOneMenu></td>
+							<td>#{msg['transactions.packgedFrom']}</td>
+							<td><h:selectOneMenu id="packagedFormId"
+									value="#{commonBean.packagedFormId}">
+									<f:selectItem itemValue="0" itemLabel="--select--" />
+									<f:selectItems value="#{packagedFormBean.packagedFormList}"
+										var="packagedFormValue" itemLabel="#{packagedFormValue.name}"
+										itemValue="#{packagedFormValue.id}" />
+								</h:selectOneMenu></td>
+							<td>#{msg['transactions.weight']}</td>
+							<td><pe:inputNumber id="weight" value="#{commonBean.weight}"></pe:inputNumber>
+							</td>
+							<td>#{msg['transactions.volume']}</td>
+							<td><pe:inputNumber id="volume" value="#{commonBean.volume}"></pe:inputNumber></td>
+						</tr>
+						<tr>
+							<td>#{msg['transactions.departureProvince']}</td>
+							<td><h:selectOneMenu id="slbDepartureProvinceId"
+									value="#{commonBean.departureProvinceCode}">
+									<f:selectItem itemValue="" itemLabel="--select--" />
+									<f:selectItems value="#{provinceBean.provinceList}"
+										var="provinceValue" itemLabel="#{provinceValue.name}"
+										itemValue="#{provinceValue.name}" />
+								</h:selectOneMenu></td>
+							<td>#{msg['transactions.arrivalProvince']}</td>
+							<td><h:selectOneMenu id="slbArrivalProvinceId"
+									value="#{commonBean.arrivalProvinceCode}">
+									<f:selectItem itemValue="" itemLabel="--select--" />
+									<f:selectItems value="#{provinceBean.provinceList}"
+										var="provinceValue" itemLabel="#{provinceValue.name}"
+										itemValue="#{provinceValue.name}" />
+								</h:selectOneMenu></td>
+							<td>#{msg['transactions.departureDate']}</td>
+							<td><p:calendar id="departureDate"
+									value="#{commonBean.departureDate}" pattern="dd/MM/yyyy"
+									maxlength="10" /></td>
+							<td>#{msg['transactions.arrivalDate']}</td>
+							<td><p:calendar id="arrivalDate"
+									value="#{commonBean.arrivalDate}" pattern="dd/MM/yyyy"
+									maxlength="10" /></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><p:commandButton styleClass="btn_search"
+									actionListener="#{commonBean.searchTransaction()}"
+									update="table_transactions" value="Tìm kiếm" /></td>
+						</tr>
+					</tbody>
+				</table>
+				<br />
+
+				<div class="table_content">
+					<h4>DANH SÁCH ĐƠN HÀNG</h4>
+					<h:dataTable id="table_transactions"
+						value="#{commonBean.transactionsList}" var="transaction"
+						border="1" binding="#{table}">
+						<h:column>
+							<f:facet name="header">STT</f:facet>
+						#{table.rowIndex + 1}
+					</h:column>
+						<h:column>
+							<f:facet name="header">Hình ảnh</f:facet>
+						</h:column>
+						<h:column>
+							<f:facet name="header">Loại hàng</f:facet>
+				#{transaction.goodsTypeName}
+				</h:column>
+						<h:column>
+							<f:facet name="header">Hình thức đóng gói</f:facet>
+				#{transaction.packagedFormName}
+				</h:column>
+						<h:column>
+							<f:facet name="header">Lộ trình</f:facet>
+							<p>#{transaction.departureDistrict},
+								#{transaction.departureProvince} -
+								#{transaction.arrivalDistrict}, #{transaction.arrivalProvince}</p>
+							<p>#{transaction.departureDate} - #{transaction.arrivalDate}</p>
+						</h:column>
+						<h:column>
+							<f:facet name="header">Khối lượng</f:facet>
+				#{transaction.weight}
+				</h:column>
+						<h:column>
+							<f:facet name="header">Thể tích</f:facet>
+				#{transaction.volume}
+				</h:column>
+						<h:column>
+							<f:facet name="header">Thời gian còn lại</f:facet>
+							<!-- #{transaction.created} -->
+							<pe:timer
+								timeout="#{commonBean.secondsRemaining(transaction.auctionPeriod)}"
+								formatFunction="return formatTime(value);" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Giá tham chiếu</f:facet>
+				#{transaction.price}
+				</h:column>
+						<h:column>
+							<f:facet name="header">Chi tiết</f:facet>
+							<h:form>
+								<h:commandLink value="XEM" action="RegisterCarier.xhtml" />
+							</h:form>
+						</h:column>
+					</h:dataTable>
+				</div>
+			</div>
+		</h:form>
+	</ui:composition>
+</body>
+</html>
+
+

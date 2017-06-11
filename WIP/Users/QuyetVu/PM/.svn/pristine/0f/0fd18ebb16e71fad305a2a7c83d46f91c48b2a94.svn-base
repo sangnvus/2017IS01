@@ -1,0 +1,33 @@
+package vn.co.cex.bo;
+
+import java.util.Date;
+import java.util.List;
+
+import vn.co.cex.orm.Report;
+
+public interface ReportBO extends BaseBO {
+	
+	/**
+	 * 
+	 * @return
+	 */
+	List<Report> getAllReport();
+
+	/**
+	 * 
+	 * @param id
+	 * @param userName
+	 * @param fullName
+	 * @param reportDate
+	 * @param reportTitle
+	 * @param reportQuestion
+	 * @param reportSolution
+	 * @param reportContent
+	 * @param reportReply
+	 * @param status
+	 * @return
+	 */
+	public List<Report> searchReport(int id, String userName, String fullName, 
+			Date reportDate, String reportTitle, String reportQuestion,
+			String reportSolution, String reportContent, String reportReply, Boolean status);
+}

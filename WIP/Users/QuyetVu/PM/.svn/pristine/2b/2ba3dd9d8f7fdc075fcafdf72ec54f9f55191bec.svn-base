@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 28, 2015 9:41:06 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="vn.co.cex.orm.AuctionTransactions" table="auctiontransactions">
+        <id name="id" type="java.lang.Integer">
+            <column name="Id" />
+            <generator class="identity" />
+        </id>
+        <property name="transactionId" type="int">
+            <column name="TransactionId" not-null="true" />
+        </property>
+        <property name="carrierId" type="int">
+            <column name="CarrierId" not-null="true" />
+        </property>
+        <property name="auctionDate" type="timestamp">
+            <column name="AuctionDate" not-null="true" />
+        </property>
+        <property name="autionPrice" type="float">
+            <column name="AutionPrice" not-null="true" />
+        </property>
+        <property name="note" type="string">
+            <column name="Note" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

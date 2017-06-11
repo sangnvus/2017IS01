@@ -1,0 +1,34 @@
+package vn.co.cex.dao.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.hibernate.Query;
+import org.hibernate.Session;
+
+import vn.co.cex.bo.impl.CarierBOImpl;
+import vn.co.cex.dao.DistrictDAO;
+import vn.co.cex.orm.District;
+
+public class DistrictDAOImpl extends BaseDAOImpl implements DistrictDAO {
+
+	private static final Logger log = LogManager.getLogger(CarierBOImpl.class);
+	
+	/**
+	 * Get all District
+	 */
+	public List<District> getAllDistrict() {
+		List<District> result = new ArrayList<District>();
+		try {
+			Session session = getSessionFactory().getCurrentSession();
+			Query query = session.createQuery(" from District");
+			result = query.list();
+		} catch (Exception e) {
+			log.debug(e);
+		}
+		return result;
+	}
+
+}

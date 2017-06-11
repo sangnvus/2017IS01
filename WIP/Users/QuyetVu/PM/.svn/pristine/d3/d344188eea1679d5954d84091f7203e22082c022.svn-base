@@ -1,0 +1,10 @@
+package vn.co.cex.bo;
+
+import java.util.List;
+
+import vn.co.cex.orm.District;
+
+public interface DistrictBO extends BaseBO {
+
+	public List<District> getAllDistrict();
+}

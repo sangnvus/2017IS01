@@ -1,0 +1,25 @@
+package vn.co.cex.dao.impl;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.hibernate.Session;
+
+import vn.co.cex.dao.AuctionTransactionsDAO;
+import vn.co.cex.orm.AuctionTransactions;
+
+public class AuctionTransactionsDAOImpl extends BaseDAOImpl implements AuctionTransactionsDAO {
+
+	private static final Logger log = LogManager.getLogger(UsersDAOImpl.class);
+	
+	public boolean addNewAuctionTransaction(AuctionTransactions data) {
+		try{
+			Session session = getSessionFactory().getCurrentSession();
+			session.save(data);
+			return true;
+		}
+		catch (Exception e) {
+			log.debug(e);
+		}
+		return false;
+	}
+}

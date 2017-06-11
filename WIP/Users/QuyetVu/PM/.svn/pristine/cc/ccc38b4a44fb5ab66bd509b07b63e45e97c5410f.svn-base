@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<h:body>
+
+	<ui:composition template="/WEB-INF/xhtml/common/commonLayout.xhtml">
+		<ui:define name="content">
+			<h1>CHI TIẾT ĐƠN HÀNG</h1>
+			<h:form>
+				<div>
+					<table>
+						<tr>
+							<td><p:gmap id="gmap" center="41.381542, 2.122893" zoom="15"
+									type="ROADMAP" style="width:700px;height:600px">
+								</p:gmap></td>
+							<td><p:panelGrid>
+									<p:row>
+										<p:column colspan="2">
+											<p:outputLabel value="THÔNG TIN HÀNG HÓA CẦN VẬN CHUYỂN" />
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column colspan="2">
+											<p:outputLabel
+												value="Khởi hành: #{transactionDetailBean.data.departureDistrict}, 
+												#{transactionDetailBean.data.departureProvince}" />
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column colspan="2">
+											<p:outputLabel
+												value="Đích đến: #{transactionDetailBean.data.arrivalDistrict}, 
+												#{transactionDetailBean.data.arrivalProvince}" />
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<p:outputLabel value="Mã vận đơn" />
+										</p:column>
+										<p:column>
+											
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<p:outputLabel value="Người gửi:" />
+										</p:column>
+										<p:column>
+											
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<p:outputLabel value="Điện thoại gửi:" />
+										</p:column>
+										<p:column>
+											
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<p:outputLabel value="Ngày đăng:" />
+										</p:column>
+										<p:column>
+											<p:outputLabel value="#{transactionDetailBean.data.created}" />
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<p:outputLabel value="Hạn gửi hàng:" />
+										</p:column>
+										<p:column>
+											<p:outputLabel value="#{transactionDetailBean.data.departureDate}" />
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<p:outputLabel value="Đặc điểm nơi gửi:" />
+										</p:column>
+										<p:column>
+											<p:outputLabel value="#{transactionDetailBean.data.departureCharacteristicPlace}" />
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<p:outputLabel value="Người nhận:" />
+										</p:column>
+										<p:column>
+											
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<p:outputLabel value="Điện thoại nhận:" />
+										</p:column>
+										<p:column>
+											
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<p:outputLabel value="Hạn nhận hàng:" />
+										</p:column>
+										<p:column>
+											<p:outputLabel value="#{transactionDetailBean.data.arrivalDate}" />
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<p:outputLabel value="Đặc điểm nơi nhận:" />
+										</p:column>
+										<p:column>
+											<p:outputLabel value="#{transactionDetailBean.data.arrivalCharacteristicPlace}" />
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<p:outputLabel value="Loại hàng:" />
+										</p:column>
+										<p:column>
+											<p:outputLabel value="#{transactionDetailBean.data.goodsTypeName}" />
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<p:outputLabel value="Cách đóng gói:" />
+										</p:column>
+										<p:column>
+											<p:outputLabel value="#{transactionDetailBean.data.packagedFormName}" />
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<p:outputLabel value="Khối lượng:" />
+										</p:column>
+										<p:column>
+											<p:outputLabel value="#{transactionDetailBean.data.weight}" />
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<p:outputLabel value="Số lượng:" />
+										</p:column>
+										<p:column>
+											<p:outputLabel value="#{transactionDetailBean.data.quantity}" />
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<p:outputLabel value="Kích thước:" />
+										</p:column>
+										<p:column>
+											<p:outputLabel value="#{transactionDetailBean.data.length} x 
+											#{transactionDetailBean.data.width} x #{transactionDetailBean.data.height} " />
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<p:outputLabel value="Ghi chú:" />
+										</p:column>
+										<p:column>
+											<p:outputLabel value="#{transactionDetailBean.data.description}" />
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<p:outputLabel value="Hạn đấu thầu:" />
+										</p:column>
+										<p:column>
+											<p:outputLabel value="#{transactionDetailBean.data.auctionPeriod}" />
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column>
+											<p:outputLabel value="Giá tham chiếu:" />
+										</p:column>
+										<p:column>
+											<p:outputLabel value="#{transactionDetailBean.data.price}" />
+										</p:column>
+									</p:row>
+									<p:row>
+										<p:column colspan="2">
+											<p:commandButton styleClass="btn_auction"
+												actionListener="transactionDetailBean.auction"
+												update="" value="ĐẤU THẦU" />
+										</p:column>
+									</p:row>
+								</p:panelGrid>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

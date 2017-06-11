@@ -1,0 +1,12 @@
+package vn.co.cex.dao;
+
+import vn.co.cex.orm.AuctionTransactions;
+
+public interface AuctionTransactionsDAO extends BaseDAO {
+	
+	/*
+	 * Add new auction
+	 */
+	public boolean addNewAuctionTransaction(AuctionTransactions data);
+	
+}

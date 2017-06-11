@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<h:outputStylesheet name="login.css" library="css" />
+</h:head>
+<body>
+	<div class="login-card">
+		<h1>Đăng Nhập</h1>
+		<h:form id="loginForm">
+			<h:outputLabel value="Tên Đăng Nhập:" />
+			<h:inputText value="#{userLogin.username}" />
+			<br />
+			<h:outputLabel value="Mật Khẩu:" />
+			<h:inputSecret value="#{userLogin.password}"></h:inputSecret>
+			<br />
+			<h:commandButton value="Đăng Nhập" action="#{userLogin.login}"></h:commandButton>
+		</h:form>
+		<div class="login-help">
+			<a href="#">Đăng Ký</a> • <a href="#">Quên Mật Khẩu</a>
+		</div>
+	</div>
+	<script
+		src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script
+		src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+</body>
+</html>

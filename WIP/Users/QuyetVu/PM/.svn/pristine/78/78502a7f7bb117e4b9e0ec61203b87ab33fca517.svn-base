@@ -1,0 +1,76 @@
+package vn.co.cex.bean.transaction;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.context.RequestContext;
+
+import vn.co.cex.bean.BaseBean;
+import vn.co.cex.bo.TransactionsBO;
+import vn.co.cex.dto.TransactionsDTO;
+import vn.co.cex.orm.Transactions;
+import vn.co.cex.orm.Users;
+import vn.co.cex.utils.SessionUtils;
+
+@ManagedBean(name = "transactionDetailBean", eager = true)
+@ViewScoped
+public class TransactionDetailBean extends BaseBean {
+	@ManagedProperty(value = "#{transactionsBO}")
+	private TransactionsBO transactionsBO;
+
+	private TransactionsDTO data;
+
+	@PostConstruct
+	public void init() {
+		try {
+			FacesContext context = FacesContext.getCurrentInstance();
+			ExternalContext extContext = context.getExternalContext();
+			Map<String, String> params = extContext.getRequestParameterMap();
+			String id = params.get("id");
+			data = transactionsBO.getTransactionById(Integer.parseInt(id));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public TransactionsDTO getData() {
+		return data;
+	}
+
+	public void setData(TransactionsDTO data) {
+		this.data = data;
+	}
+
+	public TransactionsBO getTransactionsBO() {
+		return transactionsBO;
+	}
+
+	public void setTransactionsBO(TransactionsBO transactionsBO) {
+		this.transactionsBO = transactionsBO;
+	}
+
+	public void getDataTransaction(int id) {
+		data = transactionsBO.getTransactionById(id);
+	}
+
+	public void auction() {
+		try{
+			Map<String, Object> options = new HashMap<String, Object>();
+			options.put("resizable", false);
+			RequestContext.getCurrentInstance().openDialog("AuctionTransactions", options, null);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+}

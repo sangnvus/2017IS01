@@ -1,0 +1,86 @@
+package vn.co.cex.orm;
+
+import java.util.Date;
+
+public class AuctionTransactions implements java.io.Serializable {
+
+	private Integer id;
+	private Integer transactionId;
+	private Integer carrierId;
+	private Date auctionDate;
+	private float autionPrice;
+	private String note;
+
+	public AuctionTransactions() {
+
+	}
+
+	public AuctionTransactions(Integer transactionId, Integer carrierId, Date auctionDate, float autionPrice,
+			String note) {
+		super();
+		this.transactionId = transactionId;
+		this.carrierId = carrierId;
+		this.auctionDate = auctionDate;
+		this.autionPrice = autionPrice;
+		this.note = note;
+	}
+
+	public AuctionTransactions(Integer id, Integer transactionId, Integer carrierId, Date auctionDate, float autionPrice,
+			String note) {
+		super();
+		this.id = id;
+		this.transactionId = transactionId;
+		this.carrierId = carrierId;
+		this.auctionDate = auctionDate;
+		this.autionPrice = autionPrice;
+		this.note = note;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getTransactionId() {
+		return transactionId;
+	}
+
+	public void setTransactionId(Integer transactionId) {
+		this.transactionId = transactionId;
+	}
+
+	public Integer getCarrierId() {
+		return carrierId;
+	}
+
+	public void setCarrierId(Integer carrierId) {
+		this.carrierId = carrierId;
+	}
+
+	public Date getAuctionDate() {
+		return auctionDate;
+	}
+
+	public void setAuctionDate(Date auctionDate) {
+		this.auctionDate = auctionDate;
+	}
+
+	public float getAutionPrice() {
+		return autionPrice;
+	}
+
+	public void setAutionPrice(float autionPrice) {
+		this.autionPrice = autionPrice;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+}

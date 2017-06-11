@@ -1,0 +1,19 @@
+package vn.co.cex.bo.impl;
+
+import java.util.List;
+
+import vn.co.cex.bo.UsersBO;
+import vn.co.cex.orm.Users;
+
+public class UsersBOImpl extends BaseBOImpl implements UsersBO {
+
+	// get List Users
+	public List<Users> getAllUsers() {
+		return usersDAO.getAllUsers();
+	}
+
+	//get User by id
+	public Users getUserById(int id) {
+		return usersDAO.getUserById(id);
+	}
+}

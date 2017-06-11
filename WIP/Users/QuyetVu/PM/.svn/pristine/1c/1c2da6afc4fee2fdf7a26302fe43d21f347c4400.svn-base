@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Sàn giao dịch vận tải</title>
+</h:head>
+<h:body>
+	<ui:composition template="/WEB-INF/xhtml/common/commonLayout.xhtml">
+		<ui:define name="header">
+			<h:form id="UserViewForm">
+				<div id="main_header">
+					<div>
+						<div class="reg-links">
+							<i class="fa fa-globe">&nbsp;&nbsp;&nbsp;</i> <i
+								class="fa fa-user">&nbsp;</i>
+							<p:commandLink id="loginn" action="#{loginBean.loginProcess}"
+								ajax="true">
+								<h:outputText value="#{loginBean.userName}" />
+							</p:commandLink>
+							<i class="fa fa-sign-out">&nbsp;</i>
+							<p:commandLink id="logoutt" action="#{loginBean.logoutProcess}"
+								ajax="true">
+								<h:outputText value="Đăng Xuất" />
+							</p:commandLink>
+						</div>
+						<div class="hotline-support">
+							<p>
+								<i class="fa fa-phone-square">&nbsp;</i>&nbsp;01669-775-349
+								&nbsp; &nbsp; &nbsp;<i class="fa fa-envelope-square">&nbsp;</i>&nbsp;duonglvse03290<span
+									class="text-bold">@fpt.edu.vn</span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<p:layoutUnit position="north" size="100" resizable="true"
+					closable="true" collapsible="true">
+					<p:graphicImage value="/resources/images/ctc-logo.png" />
+				</p:layoutUnit>
+				<p:growl />
+				<p:menubar id="header_menu">
+					<p:menuitem value="Trang chủ" icon="fa fa-home"></p:menuitem>
+					<p:submenu label="Báo giá" icon="fa fa-money">
+						<p:menuitem value="Bảng giá tham chiếu" url="#" />
+						<p:menuitem value="Bảng giá hệ thống" url="#" />
+					</p:submenu>
+					<p:menuitem value="Tìm hàng chuyển" icon="fa fa-archive"></p:menuitem>
+					<p:menuitem value="Giao dịch của tôi" icon="fa fa-cubes"></p:menuitem>
+					<p:menuitem value="Tạo vận đơn" icon="fa fa-plus"
+						url="xhtml/PostTransaction.xhtml"></p:menuitem>
+					<p:menuitem value="Giới thiệu" icon="fa fa-file-text"
+						url="Introduce.xhtml"></p:menuitem>
+					<p:menuitem value="Liên hệ" icon="fa fa-envelope"></p:menuitem>
+				</p:menubar>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

@@ -1,0 +1,22 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/xhtml/common/commonLayout.xhtml">
+	<ui:define name="title">Bảng chi phí thực hiện giao dịch</ui:define>
+
+	<ui:define name="content">
+		<div align="center">
+			<p:dataTable var="operationfee"
+				value="#{operationFeeBean.operationFees}" paginator="true" rows="5">
+				<f:facet name="header">Bảng chi phí thực hiện giao dịch</f:facet>
+				<p:column headerText="STT">#{operationfee.id}</p:column>
+				<p:column headerText="Tên Chi Phí">#{operationfee.feeName}</p:column>
+				<p:column headerText="Chi Phí">#{operationfee.fee}</p:column>
+				<p:column headerText="Ghi chú">#{operationfee.note}</p:column>
+				<p:column headerText="Sửa chi phí"></p:column>
+				<p:column headerText="Xóa chi phí"></p:column>
+			</p:dataTable>
+		</div>
+	</ui:define>
+</ui:composition>

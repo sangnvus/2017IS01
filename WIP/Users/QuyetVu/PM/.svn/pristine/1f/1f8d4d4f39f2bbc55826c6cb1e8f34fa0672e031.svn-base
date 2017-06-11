@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Sàn giao dịch vận tải</title>
+</h:head>
+<h:body>
+	<ui:composition template="/WEB-INF/xhtml/common/commonLayout.xhtml">
+		<ui:define name="content">
+		<div>
+			<table>
+				<tbody>
+					<tr>
+						<td>Loại người dùng</td>
+						<td><h:selectOneMenu>
+							<f:selectItem itemValue="0" itemLabel="--select--" />
+						</h:selectOneMenu></td>
+					</tr>
+					<tr><td>Tên tài khoản</td>
+						<td><p:inputText id="username" value="" /></td></tr>
+					<tr>	
+						<td>Tên người dùng</td>
+						<td><p:inputText id="fullname" value="" /></td>
+					</tr>
+					<tr>
+						<td>Tiêu đề báo cáo</td>
+						<td><p:inputText id="reportTitle" value="#{reportBean.reportTitle}"/></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><p:commandButton styleClass="btn_search" actionListener="#"
+						 update="table_report" value="Tìm kiếm" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<br />
+		
+		<div class="table_content">
+			<h:dataTable id="table_report" value="#{reportBean.reportList}" var="report" border="1" binding="#{table}" >
+				<h:column>
+					<f:facet name="header">STT</f:facet>
+					#{table.rowIndex + 1}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Tài khoản</f:facet>
+					#{report.userName}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Tên</f:facet>
+					#{report.fullName}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Thời gian gửi</f:facet>
+					#{report.reportDate}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Tiêu đề báo cáo</f:facet>
+					<h:outputLink value="DetailReportAdmin.xhtml">
+						<f:param name="id" value="#{report.id}" />
+						<h:outputText value="#{report.reportTitle}"/>
+					</h:outputLink>
+				</h:column>
+			</h:dataTable>
+		</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

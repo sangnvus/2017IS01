@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Sàn giao dịch vận tải</title>
+</h:head>
+<h:body>
+	<ui:composition template="/WEB-INF/xhtml/common/commonLayout.xhtml">
+		<ui:define name="content">
+			<div name="introduce_content">
+				<h1>GIỚI THIỆU SÀN GIAO DỊCH VẬN TẢI VIỆT NAM</h1>
+				<h3>(CarrierTradingCenter.VN)</h3>
+
+				<div>
+					<h2>I. GIỚI THIỆU VỀ SÀN GIAO DỊCH VẬN TẢI VIỆT NAM -
+						CarierTradingCenter</h2>
+					<div>Sàn giao dịch vận tải CarrierTradingCenter có tên miền
+						CarrierTradingCenter.VN là website trực tuyến môi giới - kết nối
+						và hỗ trợ thực hiện đấu giá giao dịch giữa đơn vị, cá nhân vận tải
+						(chủ xe vận chuyển hàng hóa) với đơn vị, cá nhân chủ hàng (có nhu
+						cầu vận chuyển hàng hóa).</div>
+					<h2>II. NGUYÊN TẮC HOẠT ĐỘNG</h2>
+					<div>
+
+						<div>
+							1- Website VinaTrucking.VN cung cấp công cụ để Chủ xe (Đơn vị
+							vận tải ) và Chủ hàng (Đơn vị có hàng hóa cần vận chuyển) thực
+							việc đăng ký thông tin giao dịch, bao gồm:
+							<div>
+								+ Đăng kí có xe chở hàng.<br/>
+								+ Đăng kí nhu cầu vẩn chuyển hàng hóa. <br/>
+								+ Tìm kiếm, đấu giá vận tải hàng hóa.<br/>
+								</div>
+						</div>
+						<div>
+							2- Nội dung đăng ký sẽ được đánh mã số và được thông báo trên 
+							Website CarrierTraidingCenter.VN
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

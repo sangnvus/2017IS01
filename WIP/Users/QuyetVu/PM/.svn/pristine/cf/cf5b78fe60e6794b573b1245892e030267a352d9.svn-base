@@ -1,0 +1,9 @@
+package vn.co.cex.dao;
+
+import java.util.List;
+
+import vn.co.cex.orm.District;
+
+public interface DistrictDAO extends BaseDAO {
+	public List<District> getAllDistrict();
+}

@@ -1,0 +1,236 @@
+package vn.co.cex.dto;
+
+import java.util.Date;
+
+public class TransactionsDTO {
+	private int Id;
+	private String Code;
+
+	private int GoodsTypeId;
+	private String GoodsTypeName;
+	private int PackagedFormId;
+	private String PackagedFormName;
+	private String GoodsImage;
+	private float Weight;
+	private float Volume;
+	private int Quantity;
+	private float Length;
+	private float Width;
+	private float Height;
+	private String Description;
+	private boolean IsFrozen;
+	private boolean IsFragile;
+
+	private String DepartureProvince;
+	private String DepartureDistrict;
+	private String DepartureAddress;
+	private String DepartureCharacteristicPlace;
+	private Date DepartureDate;
+
+	private String ArrivalProvince;
+	private String ArrivalDistrict;
+	private String ArrivalAddress;
+	private String ArrivalCharacteristicPlace;
+	private Date ArrivalDate;
+
+	private Float Distance;
+	private Float Price;
+	private Date AuctionPeriod;
+
+	private Integer Status;
+
+	private Integer CreatedUserId;
+	private Date Created;
+	public int getId() {
+		return Id;
+	}
+	public void setId(int id) {
+		Id = id;
+	}
+	public String getCode() {
+		return Code;
+	}
+	public void setCode(String code) {
+		Code = code;
+	}
+	public int getGoodsTypeId() {
+		return GoodsTypeId;
+	}
+	public void setGoodsTypeId(int goodsTypeId) {
+		GoodsTypeId = goodsTypeId;
+	}
+	public String getGoodsTypeName() {
+		return GoodsTypeName;
+	}
+	public void setGoodsTypeName(String goodsTypeName) {
+		GoodsTypeName = goodsTypeName;
+	}
+	public int getPackagedFormId() {
+		return PackagedFormId;
+	}
+	public void setPackagedFormId(int packagedFormId) {
+		PackagedFormId = packagedFormId;
+	}
+	public String getPackagedFormName() {
+		return PackagedFormName;
+	}
+	public void setPackagedFormName(String packagedFormName) {
+		PackagedFormName = packagedFormName;
+	}
+	public String getGoodsImage() {
+		return GoodsImage;
+	}
+	public void setGoodsImage(String goodsImage) {
+		GoodsImage = goodsImage;
+	}
+	public float getWeight() {
+		return Weight;
+	}
+	public void setWeight(float weight) {
+		Weight = weight;
+	}
+	public float getVolume() {
+		return Volume;
+	}
+	public void setVolume(float volume) {
+		Volume = volume;
+	}
+	public int getQuantity() {
+		return Quantity;
+	}
+	public void setQuantity(int quantity) {
+		Quantity = quantity;
+	}
+	public float getLength() {
+		return Length;
+	}
+	public void setLength(float length) {
+		Length = length;
+	}
+	public float getWidth() {
+		return Width;
+	}
+	public void setWidth(float width) {
+		Width = width;
+	}
+	public float getHeight() {
+		return Height;
+	}
+	public void setHeight(float height) {
+		Height = height;
+	}
+	public String getDescription() {
+		return Description;
+	}
+	public void setDescription(String description) {
+		Description = description;
+	}
+	public boolean isIsFrozen() {
+		return IsFrozen;
+	}
+	public void setIsFrozen(boolean isFrozen) {
+		IsFrozen = isFrozen;
+	}
+	public boolean isIsFragile() {
+		return IsFragile;
+	}
+	public void setIsFragile(boolean isFragile) {
+		IsFragile = isFragile;
+	}
+	public String getDepartureProvince() {
+		return DepartureProvince;
+	}
+	public void setDepartureProvince(String departureProvince) {
+		DepartureProvince = departureProvince;
+	}
+	public String getDepartureDistrict() {
+		return DepartureDistrict;
+	}
+	public void setDepartureDistrict(String departureDistrict) {
+		DepartureDistrict = departureDistrict;
+	}
+	public String getDepartureAddress() {
+		return DepartureAddress;
+	}
+	public void setDepartureAddress(String departureAddress) {
+		DepartureAddress = departureAddress;
+	}
+	public String getDepartureCharacteristicPlace() {
+		return DepartureCharacteristicPlace;
+	}
+	public void setDepartureCharacteristicPlace(String departureCharacteristicPlace) {
+		DepartureCharacteristicPlace = departureCharacteristicPlace;
+	}
+	public Date getDepartureDate() {
+		return DepartureDate;
+	}
+	public void setDepartureDate(Date departureDate) {
+		DepartureDate = departureDate;
+	}
+	public String getArrivalProvince() {
+		return ArrivalProvince;
+	}
+	public void setArrivalProvince(String arrivalProvince) {
+		ArrivalProvince = arrivalProvince;
+	}
+	public String getArrivalDistrict() {
+		return ArrivalDistrict;
+	}
+	public void setArrivalDistrict(String arrivalDistrict) {
+		ArrivalDistrict = arrivalDistrict;
+	}
+	public String getArrivalAddress() {
+		return ArrivalAddress;
+	}
+	public void setArrivalAddress(String arrivalAddress) {
+		ArrivalAddress = arrivalAddress;
+	}
+	public String getArrivalCharacteristicPlace() {
+		return ArrivalCharacteristicPlace;
+	}
+	public void setArrivalCharacteristicPlace(String arrivalCharacteristicPlace) {
+		ArrivalCharacteristicPlace = arrivalCharacteristicPlace;
+	}
+	public Date getArrivalDate() {
+		return ArrivalDate;
+	}
+	public void setArrivalDate(Date arrivalDate) {
+		ArrivalDate = arrivalDate;
+	}
+	public Float getDistance() {
+		return Distance;
+	}
+	public void setDistance(Float distance) {
+		Distance = distance;
+	}
+	public Float getPrice() {
+		return Price;
+	}
+	public void setPrice(Float price) {
+		Price = price;
+	}
+	public Date getAuctionPeriod() {
+		return AuctionPeriod;
+	}
+	public void setAuctionPeriod(Date auctionPeriod) {
+		AuctionPeriod = auctionPeriod;
+	}
+	public Integer getStatus() {
+		return Status;
+	}
+	public void setStatus(Integer status) {
+		Status = status;
+	}
+	public Integer getCreatedUserId() {
+		return CreatedUserId;
+	}
+	public void setCreatedUserId(Integer createdUserId) {
+		CreatedUserId = createdUserId;
+	}
+	public Date getCreated() {
+		return Created;
+	}
+	public void setCreated(Date created) {
+		Created = created;
+	}
+}

@@ -1,0 +1,256 @@
+body {
+    margin: 0 !important;
+}
+
+#content {
+	margin: 50px 0px;
+}
+
+#content h1 {
+	text-align: center;
+}
+
+#content .table_content,
+#content #table_search {
+	margin: 0px;
+	padding: 20px;	
+}
+
+#content #table_search {
+	width: 100%;
+}
+
+#content #table_search input.ui-inputfield {
+	height: 35px;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    padding: 0px 10px;
+    width: 178px;
+}
+
+#content #table_search select {
+    height: 37px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    width: 200px;
+}
+
+#content #table_search tbody > tr {
+	height: 45px;
+}
+
+#content #table_search .btn_search {
+	width: 200px;
+}
+
+#content .table_content table {
+	border-collapse: collapse;
+	border: 1px solid #ddd;
+	width: 100%;
+}
+
+#content .table_content table thead {
+	background-color: #00A0E0;
+}
+
+#content .table_content table thead tr th {
+	font-size: 14px;
+    padding: 11px;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+#content .table_content table tbody tr td{
+	text-align: center;
+}
+
+#content .table_content table tbody tr:NTH-CHILD(even) {
+	background-color: #EFF8FB;
+}
+
+#content .table_content table td {
+	padding: 6px;
+}
+
+.ui-menuitem-icon {
+	margin-right: 5px;
+}
+
+div.ui-menu {
+	background: #333;
+	padding: 5px;
+	border: none;
+	border-radius: 0px;
+}
+
+div.ui-menu .ui-menu-list a.ui-menuitem-link {
+	color: #fff;
+	font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+div.ui-menu li.ui-menuitem li.ui-menuitem a.ui-menuitem-link {
+	color: #000;
+}
+
+div.ui-menu li.ui-menuitem li.ui-menuitem:hover > a.ui-menuitem-link {
+	color: #fff;
+}
+
+
+/* div.ui-menu .ui-menu-list a.ui-menuitem-link .ui-menuitem-text{
+	color: #000000;
+} */
+
+/*div.ui-menu .ui-menu-list a.ui-menuitem-link > span:NTH-CHILD(2) {
+	display: block !important;
+}
+
+div.ui-menu .ui-menu-list a.ui-menuitem-link > span:LAST-CHILD {
+	display: none;
+}*/
+
+/* ============================ header ================================== */
+
+.scroll {
+	position: fixed;
+	background-color: rgba(0, 160, 224, 0.9) !important;
+	z-index: 1;
+}
+
+.fix {
+	position: fixed !important;
+	top: 60px;
+	left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#main_header {
+	background-color: #00A0E0;
+	padding: 5px 30px;
+	top: 0;
+    left: 0;
+    right: 0;
+}
+
+#main_header .reg-links {
+	float: right;
+}
+
+#main_header .reg-links a {
+	color: #FF0;
+	text-decoration: none;
+}
+
+#main_header .hotline-support p {
+	color: #fff;
+}
+
+
+/* ============================ END: header ================================== */
+
+/* ============================ footer ================================== */
+
+#footer .row_first {
+    background-color: #00A0E0;
+    padding: 0px 100px;
+    width: calc(100% - 200px);
+    height: 200px;
+}
+
+#footer .row_first > .column,
+#footer .row_second > .column {
+    float: left;
+}
+
+#footer .row_first > .column:NTH-CHILD(1) {
+    width: 50%;
+}
+
+#footer .row_first > .column:NTH-CHILD(2),
+#footer .row_first > .column:NTH-CHILD(3) {
+    width: 25%;
+}
+
+#footer .row_first .column .row h4,
+#footer .row_first .column .row a,
+#footer .row_first .column .row i,
+#footer .row_second .column div,
+#footer .row_second .column div a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#footer .row_second {
+    background-color: #333;
+    padding: 20px 100px;
+    height: 85px;
+}
+
+#footer .row_second > .column {
+	width: 33%;
+	padding: 10px;
+}
+
+#footer .row_second > .column:NTH-CHILD(2) {
+	text-align: center;
+	padding: 25px 0px;
+}
+
+#footer .row_second > .column:NTH-CHILD(2) a {
+    background: rgba(16, 15, 15, 0.38);
+    padding: 5px 20px;
+    border-radius: 15px;
+}
+
+#footer .row_first .column p {
+	line-height: 5px;
+}
+
+#footer .row_first .column:NTH-CHILD(2) .row:NTH-CHILD(2) p,
+#footer .row_first .column:NTH-CHILD(3) .row:NTH-CHILD(2) p {
+	margin: 10px 0px;
+}
+
+#footer .row_first .column:NTH-CHILD(1) .row h4 {
+	margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+#footer .row_first .column:NTH-CHILD(2) .row h4,
+#footer .row_first .column:NTH-CHILD(3) .row h4 {
+	margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+#footer .row_second p {
+	margin: 5px 0px;
+}
+
+/* ============================ END: footer ================================== */
+
+/* ============================ Post Transactions ================================== */
+
+table.input_content select {
+	height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    width: 300px;
+}
+
+table.input_content input {
+	height: 33px;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    width: 278px;
+    padding: 0px 10px;
+}
+
+table.input_content span.volume_input input {
+	width: 200px;
+}
+
+
+/* ============================ End Post Transactions ================================== */

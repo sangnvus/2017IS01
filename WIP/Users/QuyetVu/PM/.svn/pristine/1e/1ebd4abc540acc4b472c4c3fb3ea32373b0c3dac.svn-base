@@ -1,0 +1,47 @@
+package vn.co.cex.dao.impl;
+
+import java.util.Date;
+import java.util.List;
+
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.springframework.transaction.annotation.Transactional;
+
+import vn.co.cex.dao.ReportDAO;
+import vn.co.cex.orm.Report;
+
+/**
+ * @author TuanDL
+ *
+ */
+public class ReportDAOImpl extends BaseDAOImpl implements ReportDAO {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8665733281397292743L;
+
+	@SuppressWarnings("unchecked")
+	@Transactional
+	public List<Report> getAllReport() {
+		List<Report> result = null;
+		
+		Session session = getSessionFactory().getCurrentSession();
+
+		SQLQuery query = session.createSQLQuery("Select * from Report");
+		query.addEntity(Report.class);
+		//query.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
+		result = query.list();
+
+		return result;
+	}
+
+	public List<Report> searchReport(int id, String userName, String fullName, Date reportDate, String reportTitle,
+			String reportQuestion, String reportSolution, String reportContent, String reportReply, Boolean status) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+	
+}

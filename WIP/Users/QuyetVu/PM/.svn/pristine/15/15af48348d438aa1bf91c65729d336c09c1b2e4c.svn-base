@@ -1,0 +1,14 @@
+package vn.co.cex.bo.impl;
+
+import java.util.List;
+
+import vn.co.cex.bo.DistrictBO;
+import vn.co.cex.orm.District;
+
+public class DistrictBOImpl extends BaseBOImpl implements DistrictBO {
+
+	public List<District> getAllDistrict() {
+		return districtDAO.getAllDistrict();
+	}
+
+}

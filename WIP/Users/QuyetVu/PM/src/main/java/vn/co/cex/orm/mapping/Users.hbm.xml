@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 28, 2015 9:41:06 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="vn.co.cex.orm.Users" table="users">
+        <id name="id" type="int">
+            <column name="Id" />
+            <generator class="identity" />
+        </id>
+        <property name="code" type="string">
+            <column name="Code" length="20" not-null="true" />
+        </property>
+        <property name="fullName" type="string">
+            <column name="FullName" length="50" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="50" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="Password" length="50" not-null="true" />
+        </property>
+        <property name="phoneNumber" type="string">
+            <column name="PhoneNumber" length="20" not-null="false" />
+        </property>
+        <property name="address" type="string">
+            <column name="Address" length="200" not-null="false" />
+        </property>
+        <property name="province" type="string">
+            <column name="Province" not-null="false" />
+        </property>
+        <property name="district" type="string">
+            <column name="District" not-null="false" />
+        </property>
+        <property name="identityCard" type="string">
+            <column name="IdentityCard" length="20" not-null="false" />
+        </property>
+        <property name="identityCardPlace" type="string">
+            <column name="IdentityCardPlace" not-null="false" />
+        </property>
+        <property name="identityCardDate" type="date">
+            <column name="IdentityCardDate" not-null="false" />
+        </property>
+        <property name="role" type="int">
+            <column name="Role" not-null="true" />
+        </property>
+        <property name="status" type="boolean">
+            <column name="Status" not-null="true" />
+        </property>
+        <property name="created" type="timestamp">
+            <column name="Created" not-null="false" />
+        </property>
+    </class>
+</hibernate-mapping>

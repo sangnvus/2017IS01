@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+
+<h:head>
+	<title>ĐĂNG HÀNG CẦN CHUYỂN</title>
+</h:head>
+<h:body>
+
+	<ui:composition template="/WEB-INF/xhtml/common/commonLayout.xhtml">
+		<ui:define name="content">
+			<h2>ĐĂNG HÀNG CẦN CHUYỂN</h2>
+			<div>
+				<h:form id="post_transactions_form">
+
+					<p:panelGrid styleClass="ui-noborder input_content"
+						id="input_content">
+						<p:row>
+							<p:column styleClass="label">
+								<h:outputLabel class="number" value="1" />
+								<h:outputLabel class="text" value="TỔNG QUAN" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel value="Loại hàng" />
+							</p:column>
+							<p:column>
+								<h:outputLabel value="Hình thức đóng gói" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:selectOneMenu id="goodsTypeId" required="true"
+									label="Loại hàng" value="#{postTransactionBean.goodsTypeId}">
+									<f:selectItem itemValue="" itemLabel="--select--" />
+									<f:selectItems value="#{goodsTypeBean.goodsTypeList}"
+										var="goodsTypeValue" itemLabel="#{goodsTypeValue.name}"
+										itemValue="#{goodsTypeValue.id}" />
+								</h:selectOneMenu>
+							</p:column>
+							<p:column>
+								<h:selectOneMenu id="packagedFormId" required="true"
+									label="Hình thức đóng gói"
+									value="#{postTransactionBean.packagedFormId}">
+									<f:selectItem itemValue="" itemLabel="--select--" />
+									<f:selectItems value="#{packagedFormBean.packagedFormList}"
+										var="packagedFormValue" itemLabel="#{packagedFormValue.name}"
+										itemValue="#{packagedFormValue.id}" />
+								</h:selectOneMenu>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:message for="goodsTypeId" style="color:red" />
+							</p:column>
+							<p:column>
+								<h:message for="packagedFormId" style="color:red" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<p:gmap id="gmap" center="21.027823, 105.852298" zoom="5"
+									type="ROADMAP" style="width:831px;height:400px">
+								</p:gmap>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column styleClass="label">
+								<h:outputLabel class="number" value="2" />
+								<h:outputLabel class="text" value="THÔNG TIN VẬN CHUYỂN" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel value="Nơi đi" />
+							</p:column>
+							<p:column>
+								<h:outputLabel value="Nơi đến" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:selectOneMenu id="departureProvince" required="true"
+									label="Nơi đi" value="#{postTransactionBean.departureProvince}">
+									<f:selectItem itemValue="" itemLabel="--select--" />
+									<f:selectItems value="#{provinceBean.provinceList}"
+										var="provinceValue" itemLabel="#{provinceValue.name}"
+										itemValue="#{provinceValue.name}" />
+								</h:selectOneMenu>
+							</p:column>
+							<p:column>
+								<h:selectOneMenu id="arrivalProvince" required="true"
+									label="Nơi đến" value="#{postTransactionBean.arrivalProvince}">
+									<f:selectItem itemValue="" itemLabel="--select--" />
+									<f:selectItems value="#{provinceBean.provinceList}"
+										var="provinceValue" itemLabel="#{provinceValue.name}"
+										itemValue="#{provinceValue.name}" />
+								</h:selectOneMenu>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:message for="departureProvince" style="color:red" />
+							</p:column>
+							<p:column>
+								<h:message for="arrivalProvince" style="color:red" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel value="Đi từ quận/huyện" />
+							</p:column>
+							<p:column>
+								<h:outputLabel value="Đến quận/huyện" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:selectOneMenu id="departureDistrict" required="true"
+									label="Quận/huyện"
+									value="#{postTransactionBean.departureDistrict}">
+									<f:selectItem itemValue="" itemLabel="--select--" />
+									<f:selectItems value="#{districtBean.districtList}"
+										var="districtValue" itemLabel="#{districtValue.name}"
+										itemValue="#{districtValue.name}" />
+								</h:selectOneMenu>
+							</p:column>
+							<p:column>
+								<h:selectOneMenu id="arrivalDistrict" required="true"
+									label="Quận/huyện"
+									value="#{postTransactionBean.arrivalDistrict}">
+									<f:selectItem itemValue="" itemLabel="--select--" />
+									<f:selectItems value="#{districtBean.districtList}"
+										var="districtValue" itemLabel="#{districtValue.name}"
+										itemValue="#{districtValue.name}" />
+								</h:selectOneMenu>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:message for="departureDistrict" style="color:red" />
+							</p:column>
+							<p:column>
+								<h:message for="arrivalDistrict" style="color:red" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel value="Địa chỉ nơi đi" />
+							</p:column>
+							<p:column>
+								<h:outputLabel value="Địa chỉ nơi đến" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:inputText size="50" id="departureAddress" required="true"
+									label="Địa chỉ nơi đi"
+									value="#{postTransactionBean.departureAddress}" />
+							</p:column>
+							<p:column>
+								<p:inputText size="50" id="arrivalAddress" required="true"
+									label="Địa chỉ nơi đến"
+									value="#{postTransactionBean.arrivalAddress}" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:message for="departureAddress" style="color:red" />
+							</p:column>
+							<p:column>
+								<h:message for="arrivalAddress" style="color:red" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel value="Đặc điểm nơi đi" />
+							</p:column>
+							<p:column>
+								<h:outputLabel value="Đặc điểm nơi đến" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:inputText size="50" id="departureCharacteristicPlace"
+									label="Đặc điểm nơi đi" required="true"
+									value="#{postTransactionBean.departureCharacteristicPlace}" />
+							</p:column>
+							<p:column>
+								<p:inputText size="50" id="arrivalCharacteristicPlace"
+									label="Đặc điểm nơi đến" required="true"
+									value="#{postTransactionBean.arrivalCharacteristicPlace}" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:message for="departureCharacteristicPlace" style="color:red" />
+							</p:column>
+							<p:column>
+								<h:message for="arrivalCharacteristicPlace" style="color:red" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<h:outputLabel value="Quảng đường" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<pe:inputNumber size="50" id="distance" required="true"
+									label="Quảng đường" value="#{postTransactionBean.distance}" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<h:message for="distance" style="color:red" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column styleClass="label">
+								<h:outputLabel class="number" value="3" />
+								<h:outputLabel class="text" value="THÔNG TIN HÀNG HÓA" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel value="Khối lượng" />
+							</p:column>
+							<p:column>
+								<h:outputLabel value="Số lượng" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<pe:inputNumber size="50" id="weight" required="true"
+									label="Khối lượng" value="#{postTransactionBean.weight}" />
+							</p:column>
+							<p:column>
+								<pe:inputNumber size="50" id="quantity" required="true"
+									label="Số lượng" value="#{postTransactionBean.quantity}" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:message for="weight" style="color:red" />
+							</p:column>
+							<p:column>
+								<h:message for="quantity" style="color:red" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<h:outputLabel value="Thể tích" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<h:outputLabel value="Dài: " />
+								<pe:inputNumber size="29" styleClass="volume_input"
+									value="#{postTransactionBean.length}" required="true" />
+								<h:outputLabel value="  Rộng: " />
+								<pe:inputNumber size="29" styleClass="volume_input"
+									value="#{postTransactionBean.width}" required="true" />
+								<h:outputLabel value="  Cao: " />
+								<pe:inputNumber size="29" styleClass="volume_input"
+									value="#{postTransactionBean.height}" required="true" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<h:outputLabel value="Tính chất hàng hóa" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel value="Hàng đông lạnh" />
+								<h:selectBooleanCheckbox value="#{postTransactionBean.isFrozen}" />
+							</p:column>
+							<p:column>
+								<h:outputLabel value="Hàng dễ vỡ" />
+								<h:selectBooleanCheckbox
+									value="#{postTransactionBean.isFragile}" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel value="Ngày đi" />
+							</p:column>
+							<p:column>
+								<h:outputLabel value="Ngày đến" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:calendar size="50" pattern="dd/MM/yyyy HH:mm:ss"
+									label="Ngày đi" id="departureDate" required="true"
+									maxlength="10" value="#{postTransactionBean.departureDate}" />
+							</p:column>
+							<p:column>
+								<p:calendar size="50" pattern="dd/MM/yyyy HH:mm:ss"
+									label="Ngày đến" id="arrivalDate" required="true"
+									maxlength="10" value="#{postTransactionBean.arrivalDate}" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:message for="departureDate" style="color:red" />
+							</p:column>
+							<p:column>
+								<h:message for="arrivalDate" style="color:red" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column styleClass="label">
+								<h:outputLabel class="number" value="4" />
+								<h:outputLabel class="text" value="THÔNG TIN ĐẤU GIÁ" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<h:outputLabel value="Giá đề xuất" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<pe:inputNumber size="50" id="price" required="true"
+									label="Giá đề xuất" value="#{postTransactionBean.price}" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<h:message for="price" style="color:red" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<h:outputLabel value="Thời gian kết thúc đấu giá" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<p:calendar size="103" pattern="dd/MM/yyyy HH:mm:ss"
+									id="auctionPeriod" required="true"
+									label="Thời gian kết thúc đấu giá"
+									value="#{postTransactionBean.auctionPeriod}" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<h:message for="auctionPeriod" style="color:red" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<h:outputLabel value="Mô tả" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<p:editor id="editor" widgetVar="editorWidget" width="1000"
+									value="#{postTransactionBean.description}" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<h:commandButton value="Đăng kí" icon="ui-icon-disk"
+									actionListener="#{postTransactionBean.postTransactions}" />
+
+								<h:commandButton value="Hủy bỏ" icon="ui-icon-close" />
+							</p:column>
+
+						</p:row>
+					</p:panelGrid>
+				</h:form>
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

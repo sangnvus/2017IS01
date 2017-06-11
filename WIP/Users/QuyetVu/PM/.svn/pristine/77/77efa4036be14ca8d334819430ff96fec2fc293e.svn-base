@@ -1,0 +1,36 @@
+package vn.co.cex.bo;
+
+import java.util.Date;
+import java.util.List;
+
+import vn.co.cex.orm.Transactions;
+
+public interface TransactionsBO extends BaseBO {
+	
+	/**
+	 * 
+	 * @return
+	 */
+	List<Transactions> getAllTransaction();
+	
+	/**
+	 * 
+	 * @return
+	 */
+	boolean addNewTransaction(Transactions data);
+
+	/**
+	 * 
+	 * @param goodsTypeId
+	 * @param packagedFormId
+	 * @param weight
+	 * @param volume
+	 * @param departureProvinceCode
+	 * @param arrivalProvinceCode
+	 * @param departureDate
+	 * @param arrivalDate
+	 * @return
+	 */
+	public List<Transactions> searchTransaction(int goodsTypeId, int packagedFormId, float weight, float volume,
+			String departureProvinceCode, String arrivalProvinceCode, Date departureDate, Date arrivalDate);
+}

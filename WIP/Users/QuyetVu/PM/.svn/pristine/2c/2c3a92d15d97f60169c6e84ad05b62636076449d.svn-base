@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<body>
+	<ui:composition>
+		<h:form id="header_form">
+			<div id="main_header">
+				<div>
+					<div class="reg-links">
+						<a href="user/login.html" title="Đăng nhập"><i
+							class="fa fa-sign-in">&nbsp;</i>Đăng nhập</a><a
+							href="user/register.html" title="Đăng ký"><i
+							class="fa fa-plus-square-o">&nbsp;</i>Đăng ký</a>
+					</div>
+					<div class="hotline-support">
+						<p>
+							<i class="fa fa-phone-square">&nbsp;</i>&nbsp;01669-775-349 &nbsp;
+							&nbsp; &nbsp;<i class="fa fa-envelope-square">&nbsp;</i>&nbsp;duonglvse03290<span
+								class="text-bold">@fpt.edu.vn</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<p:layoutUnit position="north" size="100" resizable="true"
+				closable="true" collapsible="true">
+				<p:graphicImage value="/resources/images/ctc-logo.png" />
+			</p:layoutUnit>
+			<p:growl />
+			<p:menubar id="header_menu">
+				<p:menuitem value="Trang chủ" icon="fa fa-home"></p:menuitem>
+				<p:submenu label="Báo giá" icon="fa fa-money">
+					<p:menuitem value="Bảng giá tham chiếu" url="#" />
+					<p:menuitem value="Bảng giá hệ thống" url="#" />
+				</p:submenu>
+				<p:menuitem value="Tìm hàng chuyển" icon="fa fa-archive"></p:menuitem>
+				<p:menuitem value="Giao dịch của tôi" icon="fa fa-cubes"></p:menuitem>
+				<p:menuitem value="Tạo vận đơn" icon="fa fa-plus" url="faces/xhtml/PostTransaction.xhtml"></p:menuitem>
+				<p:menuitem value="Giới thiệu" icon="fa fa-file-text" url="faces/xhtml/Introduce.xhtml"></p:menuitem>
+				<p:menuitem value="Liên hệ" icon="fa fa-envelope"></p:menuitem>
+			</p:menubar>
+		</h:form>
+	</ui:composition>
+</body>
+</html>

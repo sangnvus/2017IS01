@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+	<!-- Navigation Configuration -->
+	<managed-bean>
+		<managed-bean-name>now</managed-bean-name>
+		<managed-bean-class>java.util.Date</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<application>
+		<message-bundle>vn.co.cex.bean.i18n.MessageResources</message-bundle>
+		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+		<!-- Internationalized Configuration -->
+		<locale-config>
+			<default-locale>vi</default-locale>
+			<supported-locale>en</supported-locale>
+			<supported-locale>vi</supported-locale>
+			<supported-locale>jp</supported-locale>
+		</locale-config>
+		<resource-bundle>
+			<base-name>vn.co.cex.bean.i18n.MessageResources</base-name>
+			<var>msg</var>
+		</resource-bundle>
+	</application>
+	<!-- navigation rule QuyetVV -->
+	<navigation-rule>
+		<from-view-id>/xhtml/*</from-view-id>
+		<navigation-case>
+		<from-action>#{loginBean.validateUsernamePassword}</from-action>
+		<from-outcome>userView</from-outcome>
+		<to-view-id>/xhtml/UsersView.xhtml</to-view-id>
+		<redirect />
+		</navigation-case>
+		<navigation-case>
+		<from-action>#{loginBean.validateUsernamePassword}</from-action>
+		<from-outcome>login</from-outcome>
+		<to-view-id>/xhtml/Login.xhtml</to-view-id>
+		<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{loginBean.loginProcess}</from-action>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/xhtml/Login.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{loginBean.logoutProcess}</from-action>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/xhtml/Home.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+</faces-config>

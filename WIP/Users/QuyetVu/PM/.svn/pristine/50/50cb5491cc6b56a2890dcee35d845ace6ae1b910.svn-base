@@ -1,0 +1,65 @@
+package vn.co.cex.bean.transaction;
+
+import java.util.Map;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+
+import vn.co.cex.bean.BaseBean;
+import vn.co.cex.bo.TransactionsBO;
+import vn.co.cex.dto.TransactionsDTO;
+import vn.co.cex.orm.Transactions;
+
+@ManagedBean(name = "transactionDetailBean", eager = true)
+@RequestScoped
+public class TransactionDetailBean extends BaseBean{
+	@ManagedProperty(value = "#{transactionsBO}")
+	private TransactionsBO transactionsBO;
+	
+	private TransactionsDTO data;
+	
+	@SuppressWarnings("restriction")
+	@PostConstruct
+	public void init(){
+		try{
+			FacesContext context = FacesContext.getCurrentInstance();
+	        ExternalContext extContext = context.getExternalContext();
+	        Map<String, String> params = extContext.getRequestParameterMap();
+	        String id = params.get("id");
+	        data = transactionsBO.getTransactionById(Integer.parseInt(id));
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public TransactionsDTO getData() {
+		return data;
+	}
+
+	public void setData(TransactionsDTO data) {
+		this.data = data;
+	}
+	
+	
+	
+	public TransactionsBO getTransactionsBO() {
+		return transactionsBO;
+	}
+
+	public void setTransactionsBO(TransactionsBO transactionsBO) {
+		this.transactionsBO = transactionsBO;
+	}
+
+	public void getDataTransaction(int id){
+		data = transactionsBO.getTransactionById(id);
+	}
+	
+	public void auction(){
+		
+	}
+}

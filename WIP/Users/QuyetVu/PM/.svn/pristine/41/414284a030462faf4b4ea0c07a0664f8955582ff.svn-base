@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Sàn giao dịch vận tải</title>
+</h:head>
+<h:body>
+	<ui:composition template="/WEB-INF/xhtml/common/commonLayout.xhtml">
+		<ui:define name="content">
+			<h1 align="left">Báo cáo chi tiết</h1>
+			<br />
+			<div class="row">
+				<table>
+					<tbody>
+						<tr>
+							<td><h:outputText value="Nguời gửi: " style="font-weight:bold; text-decoration: underline"/></td>
+							<td><h:outputText value="#{ReportDetailBean.data.userName"/></td>	
+						</tr>
+						<tr>
+							<td><h:outputText value="Tài khoản người gửi: " style="font-weight:bold; text-decoration: underline"/></td>
+						</tr>
+						<tr>
+							<td><h:outputText value="Người nhận: " style="font-weight:bold; text-decoration: underline"/></td>
+							<td><h:outputText value="Ban Quản trị trang web Carrier Trading Center"/></td>
+						</tr>
+						<tr>
+							<td><h:outputText value="Ngày gửi: " style="font-weight:bold; text-decoration: underline"/></td>
+						</tr>
+						<tr>
+							<td><h:outputText value="Câu hỏi từ người dùng: " style="font-weight:bold; text-decoration: underline"/></td>
+						</tr>
+						<tr>
+							<td><h:outputText value="Mong muốn xử lý: " style="font-weight:bold; text-decoration: underline"/></td>
+						</tr>
+						<tr>
+							<td><h:outputText value="Nội dung:" style="font-weight:bold; text-decoration: underline"/></td>
+						</tr>
+						<tr>
+						<td align="right"><h:commandButton value="Trả lời" onclick="#"/></td>
+						<td><h:commandButton value="Bỏ qua" onclick="#"/></td>
+						</tr>
+				</tbody>
+				</table>
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
